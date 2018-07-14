@@ -20,7 +20,7 @@ at: `ucdcstutoring [at] gmail {dot} com`.
 * Although, we are going to make these study guides independent from the course
 material given to you by your instructor, the material covered in the study guide
 will most certainly be inline with whatever is taught during the quarter
-(After all, we've taken the same class at Davis and tutored for those classes
+(After all, we've taken the same class at Davis and tutored for these classes
 several times, so we know what's going to be there).
 
 ### Want to Contribute?
