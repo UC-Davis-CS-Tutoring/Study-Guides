@@ -14,7 +14,7 @@ prepare for exams.
 
 * These study guides may contain some topics which may not be covered by your
 instructor during that particular quarter. If you notice a topic that is
-missing from our study guide (but was covered in your class), reach contact us
+missing from our study guide (but was covered in your class), contact us
 at: `ucdcstutoring [at] gmail {dot} com`.
 
 * Although, we are going to make these study guides independent from the course
