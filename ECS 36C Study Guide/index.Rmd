@@ -1,0 +1,64 @@
+--- 
+title: "ECS36C: Data Structures"
+subtitle: _Study Guide_
+author: Aakash Prabhu, Aaron Kaloti, Erica Nguyen
+date: Version 1.0
+documentclass: book
+link-citations: yes
+bibliography: [book.bib, packages.bib]
+site: bookdown::bookdown_site
+biblio-style: apalike
+colorlinks: yes
+graphics: yes
+---
+
+# Preface {-}
+
+This study guide is written with the intention to help students review topics
+easily and quickly before an exam, or a quiz.
+If you are enrolled in ECS 36C this quarter, please don't use this study guide
+as your primary means of preparation for an exam. This is only meant to review
+topics and this will __not__ replace a textbook or lecture notes provided by your
+instructor.
+
+Data Structures and Algorithms is probably one of the most important courses
+that one would take during their undergraduate life. Because these concepts are
+used everywhere, they always show up on technical interviews!
+Since most students will interview for either internship or full-time
+positions, we will try and indicate what topics we got tested on during interviews.
+
+This study guide goes over each and every topic, and possibly more than what
+you might see in this course. The topics presented in this guide
+are well within the scope of this course. We have broken down this study guide into
+three parts, for ease of understanding: _Data Structures_, _Graph Algorithms_,
+and _Sorting Algorithms_. Each of these parts are broken down into simpler topics
+and their use cases are explained in simple terms. Since this is a data structures
+and algorithms course, you are expected to know the time complexities of the 
+different data structures you study. We have provided these run times along with
+a detailed explanation/proof for each Data Structure and/or Algorithm you will
+cover in this class.
+
+This study guide largely makes use of examples and uses examples to
+illustrate the working of the different Data Structures and Algorithms you
+will see. Wherever neccessary, we have explained certain concepts using
+code or pseudocode. We will primarily use _C++_ to illustrate such
+implementations of algorithms.
+
+The authors of this study guide have all previously taken this course and did exceedingly well.
+Additionally, we have all tutored this class and held review sessions of our own for over 2 years
+now. We have tutored and helped countless students in this grueling course. We know those trivial
+tips and tricks that might just help you do better on an exam!
+
+If you spot a typo or a conceptual error, please contact us at
+`ucdcstutoring [at] gmail {dot} com`. Since this is the first time we are
+writing a study guide for this course, your suggestions and feedback will be
+greatly appreciated.
+
+Before we sign this preface and let you get reading with the real material,
+here's a small piece of information that you should take from this class:
+_Never ever use a B-Tree in RAM_. If you don't know what that means, you're
+about to find out soon!
+
+Good Luck,
+
+_The CS Tutoring Committee_

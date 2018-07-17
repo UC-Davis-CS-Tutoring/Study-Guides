@@ -1,0 +1,177 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            pdftitle={ECS36C: Data Structures},
+            pdfauthor={Aakash Prabhu, Aaron Kaloti, Erica Nguyen},
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=Blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{ECS36C: Data Structures}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \subtitle{\emph{Study Guide}}
+  \author{Aakash Prabhu, Aaron Kaloti, Erica Nguyen}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{Version 1.0}
+
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+This study guide is written with the intention to help students review
+topics easily and quickly before an exam, or a quiz. If you are enrolled
+in ECS 36C this quarter, please don't use this study guide as your
+primary means of preparation for an exam. This is only meant to review
+topics and this will \textbf{not} replace a textbook or lecture notes
+provided by your instructor.
+
+Data Structures and Algorithms is probably one of the most important
+courses that one would take during their undergraduate life. Because
+these concepts are used everywhere, they always show up on technical
+interviews! Since most students will interview for either internship or
+full-time positions, we will try and indicate what topics we got tested
+on during interviews.
+
+This study guide goes over each and every topic, and possibly more than
+what you might see in this course. The topics presented in this guide
+are well within the scope of this course. We have broken down this study
+guide into three parts, for ease of understanding: \emph{Data
+Structures}, \emph{Graph Algorithms}, and \emph{Sorting Algorithms}.
+Each of these parts are broken down into simpler topics and their use
+cases are explained in simple terms. Since this is a data structures and
+algorithms course, you are expected to know the time complexities of the
+different data structures you study. We have provided these run times
+along with a detailed explanation/proof for each Data Structure and/or
+Algorithm you will cover in this class.
+
+This study guide largely makes use of examples and uses examples to
+illustrate the working of the different Data Structures and Algorithms
+you will see. Wherever neccessary, we have explained certain concepts
+using code or pseudocode. We will primarily use \emph{C++} to illustrate
+such implementations of algorithms.
+
+The authors of this study guide have all previously taken this course
+and did exceedingly well. Additionally, we have all tutored this class
+and held review sessions of our own for over 2 years now. We have
+tutored and helped countless students in this grueling course. We know
+those trivial tips and tricks that might just help you do better on an
+exam!
+
+If you spot a typo or a conceptual error, please contact us at
+\texttt{ucdcstutoring\ {[}at{]}\ gmail\ \{dot\}\ com}. Since this is the
+first time we are writing a study guide for this course, your
+suggestions and feedback will be greatly appreciated.
+
+Before we sign this preface and let you get reading with the real
+material, here's a small piece of information that you should take from
+this class: \emph{Never ever use a B-Tree in RAM}. If you don't know
+what that means, you're about to find out soon!
+
+Good Luck,
+
+\emph{The CS Tutoring Committee}
+
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+TODO: Write Intro
+
+\bibliography{book.bib,packages.bib}
+
+
+\end{document}

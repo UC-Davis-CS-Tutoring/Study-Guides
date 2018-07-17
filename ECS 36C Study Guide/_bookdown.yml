@@ -1,0 +1,5 @@
+book_filename: "ECS36C Study Guide"
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true
