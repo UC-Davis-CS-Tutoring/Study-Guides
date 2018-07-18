@@ -3,7 +3,7 @@
 ## Authors
 
 * [Aakash Prabhu](http://aakprabhu.com), Class of 2019
-
+* [Aaron Kaloti](https://aaronistheman.github.io/#/home), Class of 2018
 * Erica Nguyen, Class of 2019
 
 ## Important Notes to the Reader
