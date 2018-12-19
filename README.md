@@ -23,10 +23,3 @@ will most certainly be inline with whatever is taught during the quarter
 (After all, we've taken the same class at Davis and tutored for these classes
 several times, so we know what's going to be there).
 
-### Want to Contribute?
-
-Interested in contributing to our study guides? Do you see a typo/error?
-
-1. Fork this repository.
-2. Make your changes.
-3. Submit a pull request to contribute!
