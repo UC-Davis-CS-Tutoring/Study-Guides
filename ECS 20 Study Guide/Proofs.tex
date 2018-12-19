@@ -1,0 +1,188 @@
+\chapter{Proofs and Proof Methods}
+Writing proofs deepens your knowledge of the subject at hand. ECS 20 is a proof
+heavy course and prepares you to write extensive proofs in upper division CS
+and Math classes. Almost 60\% of your exam will be based on proofs and will
+test your ability to write a flawless proof. Here are three important proof
+methods that this chapter will cover:
+\begin{itemize}
+    \item Direct Proof
+    \item Indirect Proof (Proof by Contraposition)
+    \item Proof by Contradiction
+    \item Proof by Cases
+    \item Constructive and Non-Constructive Proofs
+\end{itemize}
+\section{Direct Proof}
+This is the most basic proof method. Here, we will be given a statement of the
+form $ P \rightarrow Q $ and you will be asked to prove this propositional
+form. Here is how you could prove something directly: \\
+\indent \textbf{Step 1:} Given $P \rightarrow Q$, assume P is true. \\
+\indent \textbf{Step 2:} Using $P$, try to use the given information of $P$ to
+arrive at $Q$. \\ \\
+Here is a simple example:
+\begin{center}
+    \textbf{If $a$ is an even integer, then $a^{3} - 6a$ is even.}
+\end{center}
+\begin{proof}
+Let us use a direct proof. \\
+Assume $a$ is an even integer. \\
+Then,
+\begin{center}
+    $\exists k \in \mathbb{Z}$, $a = 2k$ \\
+    Then, \\
+     $a^{3} - 6a = (2k)^{3} - 6(2k)$  \\
+     $ = 8k^{3} - 12k$ \\
+     $ = 2(4k^{3} - 6k)$ \\
+     $ = 2m $, where $ m = 4k^{3} - 6k $ \\
+     Therefore, $a^{3} - 6a$ is even. \\
+     Therefore If $a$ is even, then $a^{3} -6a$ is even
+\end{center}
+\end{proof}
+\section{Indirect Proof (Proof by Contraposition)}
+Suppose we are given a statement of the form $P \rightarrow Q$. Sometimes, a
+direct proof might be very hard (sometimes impossible) to go about. Therefore
+we resort to another proof method that simplifies things. In this proof, we
+will try to show $\neg Q \rightarrow \neg P$ is true. By drawing out a simple
+truth table you can show that $ P \rightarrow Q \Leftrightarrow \neg Q
+\rightarrow \neg P$.\\
+\indent Here is how you can prove something by contraposition: \\
+\indent \textbf{Step 1:} Given $P \rightarrow Q$, Assume $\neg Q$ is true. \\
+\indent \textbf{Step 2:} Using $\neg Q$, try to arrive at $\neg P$. \\
+\noindent Here is a simple example:
+\begin{center}
+    \textbf{If $a^{2}$ is even then, $a$ is even}
+\end{center}
+\begin{proof}
+    Let us use an indirect proof. \\
+    Assume $a$ is odd (Assume $\neg Q$). \\
+    Then,
+    \begin{center}
+        $\exists k \in \mathbb{Z}$, $a = 2k + 1$ \\
+        Then, \\
+        $ a^{2} = (2k + 1)^{2} = 4k^2 + 4k + 1 $ \\
+        $\Leftrightarrow$ \\
+        $ a^{2} = 2(2k^{2} + 2k) + 1 $ \\
+        $ = 2m + 1 $, where $ m = 2k^{2} + 2k $ \\
+        Therefore, $a^{2}$ is odd. \\
+        Thus, we have shown that if $a$ is odd, then $a^{2}$ is odd.
+    \end{center}
+    Therefore by contraposition, If $a^{2}$ is even then, $a$ is even.
+\end{proof}
+\section{Proof By Contradiction}
+Suppose we are given asked to prove a given statement, Q, a direct proof might
+not be feasible. Hence we resort to our last proof method to prove statements
+that might look difficult to prove directly. In this proof method, we assume
+$\neg Q$ to be true. Suppose you are given a statement of the form $P
+\rightarrow Q$, then you assume $\neg (P \rightarrow Q)$, which is basically $P
+\wedge \neg Q$. \\ \\
+Here is a simple example:
+\begin{center}
+    \textbf{If $(a,b) \in \mathbb{Z}^{2}$, then $a^{2} - 4b \neq 2$}
+\end{center}
+\begin{proof}
+    Let us use a proof by contradiction. Assume $P \wedge \neg Q$ is true. Then
+    $(a,b) \in \mathbb{Z}^{2} \wedge (a^{2} -4b = 2)$ is true.
+    \begin{center}
+        If $a^{2} - 4b = 2$, then \\
+        $a^{2} = 2 + 4b$ \\
+        $\Leftrightarrow$ \\
+        $a^{2}$ is even \\
+        $\Leftrightarrow$ \\
+        $a$ is even \footnote{You can prove this by contraposition. However, If
+        you're interested in using a direct proof to show that $a^{2}$ is even
+        $\rightarrow a$ is even, then you'd have to wait till we reach number
+        theory ;)} \\
+        $\Leftrightarrow$ \\
+        $\exists k \in \mathbb{Z}$, $a = 2k$ \\
+        $\Leftrightarrow$ \\
+        $(2k)^{2} - 4b = 2$ \\
+        $\Leftrightarrow$ \\
+        $4k^{2} - 4b = 2$ \\
+        $\Leftrightarrow$ \\
+        $2k^{2} - 2b = 1$ \\
+        $2 \times (k^{2} - 2b) = 1$ \\
+        $\Leftrightarrow$ \\
+        An even integer is equal to the odd integer 1, which is a
+        contradiction.
+    \end{center}
+    This contradiction arises due to our incorrect assumption that $\neg (P
+    \rightarrow Q)$ was true. \\
+    Therefore, $P \rightarrow Q$ is true. \\
+    Thus, If $(a,b) \in \mathbb{Z}^{2}$, then $a^{2} - 4b \neq 2$
+\end{proof}
+\section{Proof by Cases}
+This is a proof method that is always used when you do not know the constraints
+to a problem. Let us illustrate this with a very simple example: \\  \\
+\begin{center}
+    \textbf{If $a$ is an integer, then $2a + 1$ is odd.}
+\end{center}
+\begin{proof}
+    Here, we do not know if $a$ is an even or odd integer. Thus, we consider
+    both cases and try to prove our hypothesis: \\
+    \textbf{\emph{Case 1:}} $a$ is even. \\
+    \indent Then, ($\exists k \in \mathbb{Z}$)[$a = 2k$]. \\
+    \indent Then, $2a + 1 = 2(2k) + 1$, which is odd! \\
+    \noindent
+    \textbf{\emph{Case 2:}} $a$ is odd. \\
+    \indent Then, ($\exists k \in \mathbb{Z}$)[$a = 2k + 1$]. \\
+    \indent Then, $2a + 1 = 2(2k + 1) + 1$, which is also odd!
+    \noindent
+
+\end{proof}
+\section{Constructive and Non-Constructive Proofs}
+\subsection{Constructive Proofs}
+Constructive proofs are proof methods in which a specific example is provided.
+These proofs are generally referred to as "\emph{Existence Proofs}". \\
+Let us take two separate examples to illustrate this proof method. \\
+\indent \textbf{\emph{Example 1:}} Show that there exist two integers a and b
+such that $a + b$ and $a - b$ are both prime numbers. \\
+\begin{proof}
+    We only need to show a single pair $(a,b)$ for which $a + b$ and $a - b$
+    are both prime numbers.\\ \\
+    Let us take $a = 5$ and $b = 2$. \\
+    Then, $a + b = 7$ and $a - b = 3$. \\
+    Both, 7 and 3 are prime numbers. \\
+    Thus, we found a particular pair of numbers for which the hypothesis holds.
+\end{proof}
+\indent \textbf{\emph{Example 2:}} Prove or disprove the following:
+\begin{center}
+    For all $k \in \mathbb{Z}$ greater than 2, $2k + 7$ is a prime number.
+\end{center}
+\begin{proof}
+    Let us try out a few numbers and see what we get: \\
+    Try $k = 2$ \\
+    \indent Then, $2k + 7 = (2 \times 2) + 7 = 4 + 7 = 11$ which is a prime
+    number. \\
+    Try $k = 3$ \\
+    \indent Then, $2k + 7 = (2 \times 3) + 7 = 6 + 7 = 13$ which is a prime
+    number. \\
+    Try $k = 4$ \\
+    \indent Then, $2k + 7 = (2 \times 4) + 7 = 8 + 7 = 15$ \textbf{which is NOT
+    prime}. \\ \\
+    Thus, we have found one example which violates the hypothesis. \\
+    Thus, the given statement is \textbf{FALSE}!
+\end{proof}
+
+\subsection{Non-Constructive Proofs}
+This is another kind of an existence proof. In this method, we do not
+explicitly find a value of 'x' such that $P(x)$ is true. Instead, we show that
+there must exist some x for which $P(x)$ is true. This might seem like a
+confusing definition, so let us use this in an example: \\
+\indent \textbf{\emph{Example:}} Show that there exists a pair of irrational
+numbers a and b such that $c = a^{b}$ is rational. \\
+\textsc{Note:} This is a very famous and interesting problem in the field of
+proofs and discrete mathematics. Let us look at the solution: \\
+\begin{proof}
+    We know that $\sqrt 2$ is irrational. Let us define $c = (\sqrt 2)^{\sqrt
+    2}$. \\
+    Additionally, let us define $d = c ^{\sqrt2}$. \\
+    Then, $d = (\sqrt 2) ^{\sqrt 2 \times \sqrt 2} = (\sqrt 2) ^{2} = 2$ which
+    is rational.
+\end{proof}
+Note that we did not explicitly find the values of a and b in the above
+example. We simply showed that there could exist a pair of irrational numbers
+in which $a^{b}$ could be rational.
+
+\indent \textbf{\emph{Trivia: }} Did you know that there is a constructive
+proof for the above mentioned example? It is quite hard to find the right
+examples for a and b, but it is possible. I haven't included the answers, but
+do think about it!

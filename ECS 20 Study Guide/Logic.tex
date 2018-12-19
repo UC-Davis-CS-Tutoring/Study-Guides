@@ -1,0 +1,171 @@
+\chapter{Propositional Logic}
+\underline{\textbf{Definition:}} A \underline{\textbf{proposition}} is a
+statement with exactly one truth value.\\
+\underline{\textbf{Definition:}} Two propositions are said to be
+\underline{\textbf{equivalent}} if they have the same truth table.\\
+\underline{\textbf{Definition:}} A \underline{\textbf{tautology}} is a
+statement that is always true.\\
+\underline{\textbf{Definition:}} A \underline{\textbf{contradiction}} is a
+statement that is always false.\\
+
+\section{Truth Tables and Logical Equivalences}
+If you are given a proposition and asked to check if it is a tautology or a
+contradiction, here are two different ways to proceed: \\
+\indent 1. Construct a truth table for the given proposition. \\
+\indent 2. Use logical equivalences. \\ \\
+\noindent
+\textbf{Question: Is this a tautology or a contradiction? $$[p \wedge (q \wedge
+r)] \rightarrow [( ( (r \wedge p)\wedge q) \vee q)]$$} \\
+\textbf{Method 1 - Truth Table: }
+For readability, let us define $\alpha =  p \wedge (q \wedge r)$ and let us
+define $\beta = ( ( (r \wedge p)\wedge q) \vee q)$
+\pagebreak[4]
+
+\begin{table}[ht]
+\caption{Truth Table} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c c c c c } % 9 columns
+% centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+p & q & r & $q \wedge r$ &  $\alpha$ & $(r \wedge p)$ & $((r \wedge p) \wedge
+q)$ & $\beta$ & $\alpha \rightarrow \beta$\\ [0.5ex]
+% inserts table
+%heading
+\hline % inserts single horizontal line
+T & T & T & T & T & T & T & T & \textbf{T}\\
+T & T & F & F & F & F & F & T & \textbf{T}\\
+T & F & T & F & F & T & F & F & \textbf{T}\\
+T & F & F & F & F & F & F & F & \textbf{T}\\
+F & T & T & T & F & F & F & T & \textbf{T}\\
+F & T & F & F & F & F & F & T & \textbf{T}\\
+F & F & T & F & F & F & F & F & \textbf{T}\\
+F & F & F & F & F & F & F & F & \textbf{T}\\[1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\noindent Since $\alpha \rightarrow \beta$ is always true, this is an example
+of a tautology! \\ \\
+\textbf{Method 2 - Logical Equivalences: } \\
+\begin{center}
+    $[p \wedge (q \wedge r)] \rightarrow [( ( (r \wedge p)\wedge q) \vee q)]$
+    \\
+    $\Leftrightarrow$ \\
+    $ \neg[p \wedge q \wedge r] \vee [(  (r \wedge p\wedge q) \vee q)]$
+    (\textbf{Definition}) \\
+    $\Leftrightarrow$ \\
+    $ \neg (p \wedge q \wedge r) \vee [(p \wedge q \wedge r) \vee q]$
+    (\textbf{Commutative law})\\
+    $\Leftrightarrow$ \\
+    $[\neg (p \wedge q \wedge r) \vee (p \wedge q \wedge r)] \vee q$
+    (\textbf{Associative Law}) \\
+    $\Leftrightarrow$ \\
+    $ T \vee q $ (\textbf{Complement Law}) \\
+    $\Leftrightarrow$ \\
+    $T$ (\textbf{Identity Law})
+\end{center}
+\noindent Since the result is always true, the given proposition is a
+tautology! \\
+\textbf{NOTE:} As you can see, solving problems through logical equivalences is
+quicker, but require you to manipulate the given propositions. If you are
+uncomfortable doing this, please feel free to resort to Truth Tables. The same
+question showed up on my midterm, and I used logical equivalences to solve the
+problem.
+\section{Knights and Knaves}
+You can always except a question on logic puzzles on the midterms and the
+finals. These questions are actually fun to do and are not too difficult. \\
+You will be given a situation and you are required to use truth tables to solve
+the problem. Here is a sample problem (From a past midterm):
+\\ \\
+
+A very special island is inhabited only by Knights and Knaves. Knights always
+tell the truth,while Knaves always lie. You meet three inhabitants: Alex, John
+and Sally.Alex says, “John is a Knight if and only if Sally is a Knave”. John
+says, “If Sally is a Knight, then Alex is a Knight”. \\
+\indent Can you find what Alex, John, and Sally are? Explain your answer.
+\\ \\
+\noindent \textbf{SOLUTION:} \\
+Let us break down the problem: \\
+You have three people: Alex (A), John (J), and Sally (S). Each of them are
+either a Knight or a Knave. Hence, we have 8 possible rows in our truth table.
+\\
+Let us also break down what the people have to say:
+\begin{center}
+    Alex says, “John is a Knight if and only if Sally is a Knave”. \\
+    Which basically means \\
+    \textbf{John is a Knight} $\Leftrightarrow$ \textbf{Sally is a Knave.} \\
+   John says, “If Sally is a Knight, then Alex is a Knight”.\\
+   Which basically means \\
+   \textbf{Sally is a Knight} $\rightarrow$ \textbf{Alex is a Knight.}
+\end{center}
+With this information, let us construct our truth table:
+
+\begin{table}[ht]
+\caption{Truth Table} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c c} % 9 columns
+% centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+A & J & S & Alex Says & John Says & Does This Work?\\ [0.5ex]
+% inserts table
+%heading
+\hline % inserts single horizontal line
+Knight & Knight & Knight & F & T & \textbf{No} - Alex is a Knight who is
+lying\\
+Knight & Knight & Knave & T & T & \textbf{YES}\\
+Knight & Knave & Knight & T & T & \textbf{No} - John is a Knave who is telling
+the truth\\
+Knight & Knave & Knave & F & T & \textbf{No} -John is a Knave who is telling
+the truth\\
+Knave & Knight & Knight & F & F & \textbf{No} - John is a Knight who is lying\\
+Knave & Knight & Knave & T & T & \textbf{No} - Alex is a Knave who is telling
+the truth\\
+Knave & Knave & Knight & T & F & \textbf{No} - Alex is a Knave who is telling
+the truth \\
+Knave & Knave & Knave & F & T & \textbf{No} - John is a Knave who is telling
+the truth\\[1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\noindent From this, we can see that there is only one possible combination.
+This, Alex and John are Knights and Sally is a Knave. \\ \\
+\textbf{NOTE:} Sometimes there may be more than one possible combination that
+works out, in that case it is not possible to correctly determine who is who,
+but it is one of those correct combinations. \\
+\indent There's almost always a Knights and Knaves (or a variation) question on
+the exams.\\
+\indent If you are interested in these problems, These problems are called
+\emph{Smullyan's Island Puzzles}.
+\noindent
+\section{Additional Exercises}
+Please note that there are no solutions for the following questions.
+\subsection{Logic}
+1) Construct the truth table for the following proposition: \\
+$$[p \wedge (p \rightarrow q)] \rightarrow q $$ \\
+This rule of inference is commonly referred to as \emph{Modus Ponens}. \\ \\
+2) Prove or disprove: \\
+$$ (p \rightarrow q) \Leftrightarrow (q \rightarrow p)$$ \\ \\
+3) Is this a tautology or a contradiction?
+$$(( (P \rightarrow Q) \wedge (R \rightarrow S) \wedge (P \vee R))) \rightarrow
+(Q \vee S) $$ \\
+You may use either Truth Tables or Logical Equivalences for this question. \\
+\indent This proposition is usually referred to as the \emph{Constructive
+Dilemma}.\\ \\
+4) Prove or disprove: \\
+$$ (p \oplus q) \Leftrightarrow (p \wedge \neg q) \vee (\neg p \wedge q) $$
+
+\subsection{Logic Puzzles}
+%1) You meet two inhabitants, Alex and John, in an island of %Knights and Knaves. You also know that Knights always tell %the truth and Knaves always lie. Alex tells you, "At least %one of us is a Knave". Again, Alex tells you, "Both of us are %Knaves". What can you conclude from the given information? \\ \\
+1) A very special island is inhabited only by Knights and Knaves. Knights
+always tell the truth, while Knaves always lie. You meet three inhabitants:
+Alex, John and Sally. Alex says, "John is a Knight, if and only if Sally is a
+Knave". John says, "If Sally is a Knight, then Alex is a Knight". What can you
+conclude from the given information? \\ \\
+
+2) A very special island is inhabited only by knights and knaves. Knights
+always tell the truth, and knaves always lie. You meet three inhabitants: Alex,
+John and Sally. Alex says, "At least one of the following is true: that Sally
+is a knave or that I am a knight." John says, "Alex could claim that I am a
+knave." Sally claims, "Neither Alex nor John are knights." What can you
+conclude from the given information?
