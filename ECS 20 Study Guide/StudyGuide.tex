@@ -1,0 +1,592 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage[english]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First page of book which contains 'stuff' like: %
+%  - Book title, subtitle                         %
+%  - Book author name                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Book's title and subtitle
+\title{\Huge \textbf{Study Guide}  \\ \huge ECS 20: Discrete Math for CS
+% Author
+\author{\textsc{Computer Science Tutoring Club} \\ \textsc{Fall 2017}
+}
+}
+
+
+\begin{document}
+\frontmatter
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Auto-generated table of contents, list of figures and list of tables %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+\mainmatter
+
+%%%%%%%%%%%
+% Preface %
+%%%%%%%%%%%
+\chapter*{How to Use This Study Guide}
+This study guide is meant to help you review topics before the midterms and the final. Please do not use this study guide as your main source of preparation for exams. \\
+\par This study guide goes over each and every topic in ECS 20. I have previously taken ECS 20 with Professor Koehl, so I have a pretty good idea about exams and the material covered. Hence this study guide is tailor made for students in Professor Patrice Koehl's ECS 20. If you are not in Professor Koehl's ECS 20 and still wish to use this study guide, please go ahead and do so. Please be forewarned that some topics might not covered in this study guide that other professors might cover (for example: Graph Theory is not covered in this study guide). \\
+\par Each chapter in the study guide reviews important concepts and theorems. Furthermore, I have gone ahead and solved some questions that have been asked on previous midterms. Additionally, I have added a few questions for you to try out on your own (\textbf{No solutions have been provided}). \\
+\par I sincerely hope that this study guide helps you better prepare for the midterms and the final! Good luck on this challenging course. \\
+
+\noindent \textbf{Aakash Prabhu (Class of 2019)} \\
+\noindent \textbf{President, \emph{Computer Science Tutoring Club}}
+
+%%%%%%%%%%%%%%%%
+% NEW CHAPTER! %
+%%%%%%%%%%%%%%%%
+\chapter{Math Symbols, Notations, and Identities}
+
+\section{Symbols and Notations}
+Here are the symbols and notations that you must absolutely know!
+\subsection{Sets of Numbers}
+\indent \indent $\mathbb{N}$ = Set of all Natural Numbers. \\
+\indent $\mathbb{Z}$ = Set of all Integers. \\
+\indent $\mathbb{Q}$ = Set of all Rational Numbers. \\
+\indent $\mathbb{R}$ = Set of all Real Numbers. \\
+\indent $\mathbb{C}$ = Set of all Complex Numbers.
+
+\subsection{Propositional Logic}
+\indent \indent $\neg P$ = Negation of the proposition, \emph{P}. \\
+\indent $P \wedge Q$ = Conjunction of the propositions \emph{P and Q}. \\
+\indent $P \vee Q$ = Disjunction of the propositions \emph{P and Q}. \\
+\indent $P \oplus Q$ = P XOR Q (Exclusive Or). \\
+\indent $P \rightarrow Q$ = "If P, then Q" (Conditional). \\
+\indent $P \leftrightarrow Q$ = "P if and only if Q"
+(Biconditional). \\
+\indent $P \Leftrightarrow Q$ = P is equivalent to Q. \\ \\ \\ \\
+
+\pagebreak[4]
+
+\subsection{Set Theory}
+\indent \indent $\emptyset$ = Empty Set. \\
+\indent $ x \in \mathbb{Q}$ = x belongs to a rational number. \\
+\indent $A \subset B$ = Set A is a subset of set B. \\
+\indent $S = \{1,2,3,4\}$ =  An example of a set in roster form. \\
+\indent $S = \{x \mid 1 \leq x \leq 4, x \in \mathbb{Z}\}$ = An example of a set in set-builder form. \\
+\indent $A \cup B$ = A union B.\\
+\indent$A \cap B$ = A intersection B.\\
+\indent$A - B$ = A minus B (Set difference). \\
+\indent$\overline{A}$ = Complement of A. \\
+\indent$\mid A \mid$ = Number of elements in A (Cardinality).
+
+
+\subsection{Functions}
+\indent \indent $\lceil x \rceil $ = Ceiling of x. \\
+\indent $\lfloor x \rfloor$ = Floor of x.\\
+\indent $O(f(x))$ = Big-O of the function \emph{f}.\\
+\indent $\Omega(f(x))$ = Big-Omega of the function \emph{f}.\\
+\indent $\Theta(f(x))$ = Big-Theta of the function \emph{f}.
+
+\subsection{Number Theory}
+\indent \indent $ a / b $ = a divides b. \\
+\indent $a \equiv b [m]$ = a is congruent to b modulo m.
+
+\subsection{Miscellaneous}
+\indent \indent $\sum_{i = 1} ^ {n} i$ = Sum of first n terms. \\
+\indent $\prod_{i = 1} ^ {n} i$ = Product of first n terms.\\
+\indent $n!$ = \emph{n} factorial. \\
+\indent $\forall x \in \mathbb{Z}, P(x)$ = For all x in the set of integers, P(x) is true. \\
+\indent $ \exists x \in \mathbb{Z}, P(x)$ = There exists an x such that P(x) is true.
+
+\pagebreak[4]
+
+\section{Important Identities}
+\indent \indent I have compiled a bunch of identities that are going to prove to be very useful for proofs or problem solving. Again, I have broken them down into chapters for better reference \footnote{I haven't included basic conjunctions and disjunctions of propositions because you should be knowing them by now!}.
+\subsection{Simple Mathematical Identities}
+\indent \indent $(a + b)^{2} = a^{2} + 2ab + b^{2}$ \\
+\indent $(a - b)^{2} = a^{2} - 2ab + b^{2}$ \\
+\indent $a^{2} - b^{2} = (a + b)\times(a - b)$ \\
+\indent $a^{m} \times a^{n} = a^{m + n}$ \\
+\indent $(a^{m})^{n} = a^{mn}$ \\
+\indent $log(a \times b) = log(a) + log(b)$ \\
+\indent $log(a^{b}) = b \times log(a)$
+
+\subsection{Propositional Logic}
+\indent \indent $\neg (\neg P) = P$ \\
+\indent $P \oplus Q = (P \vee Q) \wedge (\neg(P \wedge Q))$ \\
+\indent $\neg(P \wedge Q) = \neg P \vee \neg Q$\\
+\indent $\neg(P \vee Q) = \neg P \wedge \neg Q$ \\
+\indent $P \vee P = P$\\
+\indent $P \wedge P = P$\\
+\indent $P \wedge Q = Q \wedge P$ \\
+\indent $P \vee Q = Q \vee P$ \\
+\indent $(P \wedge Q) \wedge R = P \wedge (Q \wedge R)$ \\
+\indent $(P \vee Q) \vee R = P \vee (Q \vee R)$ \\
+\indent $P \wedge (Q \vee R) = (P \vee Q) \wedge (P \vee R)$ \\
+\indent $P \vee (Q \wedge R) = (P \wedge R) \vee (P \wedge R)$ \\
+\indent $ P \leftrightarrow Q \Leftrightarrow (P \rightarrow Q) \wedge (Q \rightarrow P)$ \\
+\indent $P \rightarrow Q = \neg P \vee Q$ \\
+
+\subsection{Functions}
+\indent \indent $ x - 1 < \lfloor x \rfloor \leq x \leq \lceil x \rceil < x + 1$ \\
+\indent $ \lfloor - x \rfloor = - \lceil x \rceil$ \\
+\indent $ \lceil -x \rceil = - \lfloor x \rfloor$ \\
+\indent $ \lfloor x + n \rfloor = \lfloor x \rfloor + n$, for some \emph{n} $\in \mathbb{Z}$ \\
+\indent $ \lceil x + n \rceil = \lceil x \rceil + n$, for some \emph{n} $\in \mathbb{Z}$ \\
+\indent $(\exists n \in \mathbb{Z})(\exists \epsilon \in \mathbb{R}) \lfloor x \rfloor = n + \epsilon$, where $ 0 \leq \epsilon \leq 1$ \\
+\indent $f(x) = O(g(x)) \rightarrow (\exists k \in \mathbb{Z})(\exists c \in \mathbb{R^{+}})(\forall x > k)[f(x) \leq c \times g(x)]$\\
+\indent $f(x) = \Omega(g(x)) \rightarrow (\exists k \in \mathbb{Z})(\exists c \in \mathbb{R^{+}})(\forall x > k)[f(x) \geq c \times g(x)]$\\
+\indent $f(x) = \Theta(g(x)) \rightarrow [f(x) = O(g(x))] \wedge [f(x) = \Omega(g(x))]$
+
+\subsection{Number Theory}
+\indent \indent $ a / b \rightarrow (\exists c \in \mathbb{Z})[a = b \times c]$\\
+\indent $ a / b \wedge a / c \rightarrow a / (b + c)$\\
+\indent $ a/ b \wedge b / c \rightarrow a / c $\\
+\indent $ gcd(a, b) = am + bn$, for some $m, n \in \mathbb{Z}$ (\textbf{Bezout's Identity})\\
+\indent $ gcd(a, b) \times lcm(a, b) = a \times b$\\
+\indent $ a \equiv b[m] \wedge c \equiv d[m] \rightarrow (a + b) \equiv (c + d)[m]$\\
+\indent $ a \equiv b[m] \wedge c \equiv d[m] \rightarrow (ab) \equiv (cd)[m]$\\
+\indent If \emph{p} is a prime number, then $a^{p} \equiv a[p]$ (\textbf{Fermat's Little Theorem})\\
+\indent If \emph{p} is a prime number and $p / ab$, then $p / a \vee p / b$ (\textbf{Euclid's Identity})\\
+
+\subsection{Counting}
+\indent \indent $\mid A \cup B \mid$ =  $\mid A \mid + \mid B \mid - \mid A \cap B \mid$ \\
+\indent $P(n,r)$ = $ \frac{n!}{(n - r)!}$ (\textbf{Permutations}) \\
+\indent $C(n,r)$ or $\binom{n}{r}$ = $\frac{n!}{r!(n - r)!}$ (\textbf{Combinations})
+
+\chapter{Propositional Logic}
+\underline{\textbf{Definition:}} A \underline{\textbf{proposition}} is a statement with exactly one truth value.\\
+\underline{\textbf{Definition:}} Two propositions are said to be \underline{\textbf{equivalent}} if they have the same truth table.\\
+\underline{\textbf{Definition:}} A \underline{\textbf{tautology}} is a statement that is always true.\\
+\underline{\textbf{Definition:}} A \underline{\textbf{contradiction}} is a statement that is always false.\\
+
+\section{Truth Tables and Logical Equivalences}
+If you are given a proposition and asked to check if it is a tautology or a contradiction, here are two different ways to proceed: \\
+\indent 1. Construct a truth table for the given proposition. \\
+\indent 2. Use logical equivalences. \\ \\
+\noindent
+\textbf{Question: Is this a tautology or a contradiction? $$[p \wedge (q \wedge r)] \rightarrow [( ( (r \wedge p)\wedge q) \vee q)]$$} \\
+\textbf{Method 1 - Truth Table: }
+For readability, let us define $\alpha =  p \wedge (q \wedge r)$ and let us define $\beta = ( ( (r \wedge p)\wedge q) \vee q)$
+\pagebreak[4]
+
+\begin{table}[ht]
+\caption{Truth Table} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c c c c c } % 9 columns
+% centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+p & q & r & $q \wedge r$ &  $\alpha$ & $(r \wedge p)$ & $((r \wedge p) \wedge q)$ & $\beta$ & $\alpha \rightarrow \beta$\\ [0.5ex]
+% inserts table
+%heading
+\hline % inserts single horizontal line
+T & T & T & T & T & T & T & T & \textbf{T}\\
+T & T & F & F & F & F & F & T & \textbf{T}\\
+T & F & T & F & F & T & F & F & \textbf{T}\\
+T & F & F & F & F & F & F & F & \textbf{T}\\
+F & T & T & T & F & F & F & T & \textbf{T}\\
+F & T & F & F & F & F & F & T & \textbf{T}\\
+F & F & T & F & F & F & F & F & \textbf{T}\\
+F & F & F & F & F & F & F & F & \textbf{T}\\[1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\noindent Since $\alpha \rightarrow \beta$ is always true, this is an example of a tautology! \\ \\
+\textbf{Method 2 - Logical Equivalences: } \\
+\begin{center}
+    $[p \wedge (q \wedge r)] \rightarrow [( ( (r \wedge p)\wedge q) \vee q)]$ \\
+    $\Leftrightarrow$ \\
+    $ \neg[p \wedge q \wedge r] \vee [(  (r \wedge p\wedge q) \vee q)]$ (\textbf{Definition}) \\
+    $\Leftrightarrow$ \\
+    $ \neg (p \wedge q \wedge r) \vee [(p \wedge q \wedge r) \vee q]$ (\textbf{Commutative law})\\
+    $\Leftrightarrow$ \\
+    $[\neg (p \wedge q \wedge r) \vee (p \wedge q \wedge r)] \vee q$ (\textbf{Associative Law}) \\
+    $\Leftrightarrow$ \\
+    $ T \vee q $ (\textbf{Complement Law}) \\
+    $\Leftrightarrow$ \\
+    $T$ (\textbf{Identity Law})
+\end{center}
+\noindent Since the result is always true, the given proposition is a tautology! \\
+\textbf{NOTE:} As you can see, solving problems through logical equivalences is quicker, but require you to manipulate the given propositions. If you are uncomfortable doing this, please feel free to resort to Truth Tables. The same question showed up on my midterm, and I used logical equivalences to solve the problem.
+\section{Knights and Knaves}
+You can always except a question on logic puzzles on the midterms and the finals. These questions are actually fun to do and are not too difficult. \\
+You will be given a situation and you are required to use truth tables to solve the problem. Here is a sample problem (From a past midterm):
+\\ \\
+
+A very special island is inhabited only by Knights and Knaves. Knights always tell the truth,while Knaves always lie. You meet three inhabitants: Alex, John and Sally.Alex says, “John is a Knight if and only if Sally is a Knave”. John says, “If Sally is a Knight, then Alex is a Knight”. \\
+\indent Can you find what Alex, John, and Sally are? Explain your answer.
+\\ \\
+\noindent \textbf{SOLUTION:} \\
+Let us break down the problem: \\
+You have three people: Alex (A), John (J), and Sally (S). Each of them are either a Knight or a Knave. Hence, we have 8 possible rows in our truth table. \\
+Let us also break down what the people have to say:
+\begin{center}
+    Alex says, “John is a Knight if and only if Sally is a Knave”. \\
+    Which basically means \\
+    \textbf{John is a Knight} $\Leftrightarrow$ \textbf{Sally is a Knave.} \\
+   John says, “If Sally is a Knight, then Alex is a Knight”.\\
+   Which basically means \\
+   \textbf{Sally is a Knight} $\rightarrow$ \textbf{Alex is a Knight.}
+\end{center}
+With this information, let us construct our truth table:
+
+\begin{table}[ht]
+\caption{Truth Table} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c c} % 9 columns
+% centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+A & J & S & Alex Says & John Says & Does This Work?\\ [0.5ex]
+% inserts table
+%heading
+\hline % inserts single horizontal line
+Knight & Knight & Knight & F & T & \textbf{No} - Alex is a Knight who is lying\\
+Knight & Knight & Knave & T & T & \textbf{YES}\\
+Knight & Knave & Knight & T & T & \textbf{No} - John is a Knave who is telling the truth\\
+Knight & Knave & Knave & F & T & \textbf{No} -John is a Knave who is telling the truth\\
+Knave & Knight & Knight & F & F & \textbf{No} - John is a Knight who is lying\\
+Knave & Knight & Knave & T & T & \textbf{No} - Alex is a Knave who is telling the truth\\
+Knave & Knave & Knight & T & F & \textbf{No} - Alex is a Knave who is telling the truth \\
+Knave & Knave & Knave & F & T & \textbf{No} - John is a Knave who is telling the truth\\[1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+\noindent From this, we can see that there is only one possible combination. This, Alex and John are Knights and Sally is a Knave. \\ \\
+\textbf{NOTE:} Sometimes there may be more than one possible combination that works out, in that case it is not possible to correctly determine who is who, but it is one of those correct combinations. \\
+\indent There's almost always a Knights and Knaves (or a variation) question on the exams.\\
+\indent If you are interested in these problems, These problems are called \emph{Smullyan's Island Puzzles}.
+\noindent
+\section{Additional Exercises}
+Please note that there are no solutions for the following questions.
+\subsection{Logic}
+1) Construct the truth table for the following proposition: \\
+$$[p \wedge (p \rightarrow q)] \rightarrow q $$ \\
+This rule of inference is commonly referred to as \emph{Modus Ponens}. \\ \\
+2) Prove or disprove: \\
+$$ (p \rightarrow q) \Leftrightarrow (q \rightarrow p)$$ \\ \\
+3) Is this a tautology or a contradiction?
+$$(( (P \rightarrow Q) \wedge (R \rightarrow S) \wedge (P \vee R))) \rightarrow (Q \vee S) $$ \\
+You may use either Truth Tables or Logical Equivalences for this question. \\
+\indent This proposition is usually referred to as the \emph{Constructive Dilemma}.\\ \\
+4) Prove or disprove: \\
+$$ (p \oplus q) \Leftrightarrow (p \wedge \neg q) \vee (\neg p \wedge q) $$
+
+\subsection{Logic Puzzles}
+%1) You meet two inhabitants, Alex and John, in an island of %Knights and Knaves. You also know that Knights always tell %the truth and Knaves always lie. Alex tells you, "At least %one of us is a Knave". Again, Alex tells you, "Both of us are %Knaves". What can you conclude from the given information? \\ \\
+1) A very special island is inhabited only by Knights and Knaves. Knights always tell the truth, while Knaves always lie. You meet three inhabitants: Alex, John and Sally. Alex
+says, "John is a Knight, if and only if Sally is a Knave". John says, "If Sally is a Knight, then Alex is a Knight". What can you conclude from the given information? \\ \\
+
+2) A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet three inhabitants: Alex, John and Sally. Alex says, "At least one of the following is true: that Sally is a knave or that I am a knight." John says, "Alex could claim
+that I am a knave." Sally claims, "Neither Alex nor John are knights." What can you conclude from the given information?
+
+\chapter{Proofs and Proof Methods}
+Writing proofs deepens your knowledge of the subject at hand. ECS 20 is a proof heavy course and prepares you to write extensive proofs in upper division CS and Math classes. Almost 60\% of your exam will be based on proofs and will test your ability to write a flawless proof. Here are three important proof methods that this chapter will cover:
+\begin{itemize}
+    \item Direct Proof
+    \item Indirect Proof (Proof by Contraposition)
+    \item Proof by Contradiction
+    \item Proof by Cases
+    \item Constructive and Non-Constructive Proofs
+\end{itemize}
+\section{Direct Proof}
+This is the most basic proof method. Here, we will be given a statement of the form $ P \rightarrow Q $ and you will be asked to prove this propositional form. Here is how you could prove something directly: \\
+\indent \textbf{Step 1:} Given $P \rightarrow Q$, assume P is true. \\
+\indent \textbf{Step 2:} Using $P$, try to use the given information of $P$ to arrive at $Q$. \\ \\
+Here is a simple example:
+\begin{center}
+    \textbf{If $a$ is an even integer, then $a^{3} - 6a$ is even.}
+\end{center}
+\begin{proof}
+Let us use a direct proof. \\
+Assume $a$ is an even integer. \\
+Then,
+\begin{center}
+    $\exists k \in \mathbb{Z}$, $a = 2k$ \\
+    Then, \\
+     $a^{3} - 6a = (2k)^{3} - 6(2k)$  \\
+     $ = 8k^{3} - 12k$ \\
+     $ = 2(4k^{3} - 6k)$ \\
+     $ = 2m $, where $ m = 4k^{3} - 6k $ \\
+     Therefore, $a^{3} - 6a$ is even. \\
+     Therefore If $a$ is even, then $a^{3} -6a$ is even
+\end{center}
+\end{proof}
+\section{Indirect Proof (Proof by Contraposition)}
+Suppose we are given a statement of the form $P \rightarrow Q$. Sometimes, a direct proof might be very hard (sometimes impossible) to go about. Therefore we resort to another proof method that simplifies things. In this proof, we will try to show $\neg Q \rightarrow \neg P$ is true. By drawing out a simple truth table you can show that $ P \rightarrow Q \Leftrightarrow \neg Q \rightarrow \neg P$.\\
+\indent Here is how you can prove something by contraposition: \\
+\indent \textbf{Step 1:} Given $P \rightarrow Q$, Assume $\neg Q$ is true. \\
+\indent \textbf{Step 2:} Using $\neg Q$, try to arrive at $\neg P$. \\
+\noindent Here is a simple example:
+\begin{center}
+    \textbf{If $a^{2}$ is even then, $a$ is even}
+\end{center}
+\begin{proof}
+    Let us use an indirect proof. \\
+    Assume $a$ is odd (Assume $\neg Q$). \\
+    Then,
+    \begin{center}
+        $\exists k \in \mathbb{Z}$, $a = 2k + 1$ \\
+        Then, \\
+        $ a^{2} = (2k + 1)^{2} = 4k^2 + 4k + 1 $ \\
+        $\Leftrightarrow$ \\
+        $ a^{2} = 2(2k^{2} + 2k) + 1 $ \\
+        $ = 2m + 1 $, where $ m = 2k^{2} + 2k $ \\
+        Therefore, $a^{2}$ is odd. \\
+        Thus, we have shown that if $a$ is odd, then $a^{2}$ is odd.
+    \end{center}
+    Therefore by contraposition, If $a^{2}$ is even then, $a$ is even.
+\end{proof}
+\section{Proof By Contradiction}
+Suppose we are given asked to prove a given statement, Q, a direct proof might not be feasible. Hence we resort to our last proof method to prove statements that might look difficult to prove directly. In this proof method, we assume $\neg Q$ to be true. Suppose you are given a statement of the form $P \rightarrow Q$, then you assume $\neg (P \rightarrow Q)$, which is basically $P \wedge \neg Q$. \\ \\
+Here is a simple example:
+\begin{center}
+    \textbf{If $(a,b) \in \mathbb{Z}^{2}$, then $a^{2} - 4b \neq 2$}
+\end{center}
+\begin{proof}
+    Let us use a proof by contradiction. Assume $P \wedge \neg Q$ is true. Then $(a,b) \in \mathbb{Z}^{2} \wedge (a^{2} -4b = 2)$ is true.
+    \begin{center}
+        If $a^{2} - 4b = 2$, then \\
+        $a^{2} = 2 + 4b$ \\
+        $\Leftrightarrow$ \\
+        $a^{2}$ is even \\
+        $\Leftrightarrow$ \\
+        $a$ is even \footnote{You can prove this by contraposition. However, If you're interested in using a direct proof to show that $a^{2}$ is even $\rightarrow a$ is even, then you'd have to wait till we reach number theory ;)} \\
+        $\Leftrightarrow$ \\
+        $\exists k \in \mathbb{Z}$, $a = 2k$ \\
+        $\Leftrightarrow$ \\
+        $(2k)^{2} - 4b = 2$ \\
+        $\Leftrightarrow$ \\
+        $4k^{2} - 4b = 2$ \\
+        $\Leftrightarrow$ \\
+        $2k^{2} - 2b = 1$ \\
+        $2 \times (k^{2} - 2b) = 1$ \\
+        $\Leftrightarrow$ \\
+        An even integer is equal to the odd integer 1, which is a contradiction.
+    \end{center}
+    This contradiction arises due to our incorrect assumption that $\neg (P \rightarrow Q)$ was true. \\
+    Therefore, $P \rightarrow Q$ is true. \\
+    Thus, If $(a,b) \in \mathbb{Z}^{2}$, then $a^{2} - 4b \neq 2$
+\end{proof}
+\section{Proof by Cases}
+This is a proof method that is always used when you do not know the constraints to a problem. Let us illustrate this with a very simple example: \\  \\
+\begin{center}
+    \textbf{If $a$ is an integer, then $2a + 1$ is odd.}
+\end{center}
+\begin{proof}
+    Here, we do not know if $a$ is an even or odd integer. Thus, we consider both cases and try to prove our hypothesis: \\
+    \textbf{\emph{Case 1:}} $a$ is even. \\
+    \indent Then, ($\exists k \in \mathbb{Z}$)[$a = 2k$]. \\
+    \indent Then, $2a + 1 = 2(2k) + 1$, which is odd! \\
+    \noindent
+    \textbf{\emph{Case 2:}} $a$ is odd. \\
+    \indent Then, ($\exists k \in \mathbb{Z}$)[$a = 2k + 1$]. \\
+    \indent Then, $2a + 1 = 2(2k + 1) + 1$, which is also odd!
+    \noindent
+
+\end{proof}
+\section{Constructive and Non-Constructive Proofs}
+\subsection{Constructive Proofs}
+Constructive proofs are proof methods in which a specific example is provided. These proofs are generally referred to as "\emph{Existence Proofs}". \\
+Let us take two separate examples to illustrate this proof method. \\
+\indent \textbf{\emph{Example 1:}} Show that there exist two integers a and b such that $a + b$ and $a - b$ are both prime numbers. \\
+\begin{proof}
+    We only need to show a single pair $(a,b)$ for which $a + b$ and $a - b$ are both prime numbers.\\ \\
+    Let us take $a = 5$ and $b = 2$. \\
+    Then, $a + b = 7$ and $a - b = 3$. \\
+    Both, 7 and 3 are prime numbers. \\
+    Thus, we found a particular pair of numbers for which the hypothesis holds.
+\end{proof}
+\indent \textbf{\emph{Example 2:}} Prove or disprove the following:
+\begin{center}
+    For all $k \in \mathbb{Z}$ greater than 2, $2k + 7$ is a prime number.
+\end{center}
+\begin{proof}
+    Let us try out a few numbers and see what we get: \\
+    Try $k = 2$ \\
+    \indent Then, $2k + 7 = (2 \times 2) + 7 = 4 + 7 = 11$ which is a prime number. \\
+    Try $k = 3$ \\
+    \indent Then, $2k + 7 = (2 \times 3) + 7 = 6 + 7 = 13$ which is a prime number. \\
+    Try $k = 4$ \\
+    \indent Then, $2k + 7 = (2 \times 4) + 7 = 8 + 7 = 15$ \textbf{which is NOT prime}. \\ \\
+    Thus, we have found one example which violates the hypothesis. \\
+    Thus, the given statement is \textbf{FALSE}!
+\end{proof}
+\subsection{Non-Constructive Proofs}
+This is another kind of an existence proof. In this method, we do not explicitly find a value of 'x' such that $P(x)$ is true. Instead, we show that there must exist some x for which $P(x)$ is true. This might seem like a confusing definition, so let us use this in an example: \\
+\indent \textbf{\emph{Example:}} Show that there exists a pair of irrational numbers a and b such that $c = a^{b}$ is rational. \\
+\textsc{Note:} This is a very famous and interesting problem in the field of proofs and discrete mathematics. Let us look at the solution: \\
+\begin{proof}
+    We know that $\sqrt 2$ is irrational. Let us define $c = (\sqrt 2)^{\sqrt 2}$. \\
+    Additionally, let us define $d = c ^{\sqrt2}$. \\
+    Then, $d = (\sqrt 2) ^{\sqrt 2 \times \sqrt 2} = (\sqrt 2) ^{2} = 2$ which is rational.
+\end{proof}
+Note that we did not explicitly find the values of a and b in the above example. We simply showed that there could exist a pair of irrational numbers in which $a^{b}$ could be rational.
+
+\indent \textbf{\emph{Trivia: }} Did you know that there is a constructive proof for the above mentioned example? It is quite hard to find the right examples for a and b, but it is possible. I haven't included the answers, but do think about it!
+
+\chapter{Set Theory}
+Set Theory is one of the most fundamental topics in Abstract/Discrete Mathematics. If you have ever heard about Relations, Equivalence Classes, Groups, Rings, and Fields, they are all based off Set Theory! This chapter covers the following and it is essential that you know all of it:
+\section{Definitions}
+\underline{\textbf{Definition:}} Set A is said to be a \underline{\textbf{subset}} of the set B if ($\forall x \in A$)[$x \in B$]. \\
+\underline{\textbf{Definition:}} The \underline{\textbf{union}} of set A and set B is the set: \{$x \mid x \in A \vee x \in B$\}. \\
+\underline{\textbf{Definition:}} The \underline{\textbf{intersection}} of A and B is the set: \{$x \mid x \in A \wedge x \in B$\}.\\
+\underline{\textbf{Definition:}} The \underline{\textbf{difference}} of A and B is the set: \{$x \mid x \in A \wedge x \not\in B$\}. \\
+\underline{\textbf{Definition:}} Sets A and B are said to be \underline{\textbf{equal}} if $(A \subset B) \wedge (B \subset A)$. \\
+\underline{\textbf{Definition:}} The \underline{\textbf{complement}} of A is the set: \{$x \mid x \in D \wedge x \not\in A$\}, where D is the domain or universal set. \\
+\underline{\textbf{Definition:}} The \underline{\textbf{cardinality}} of A is the number of elements in A.
+\section{Proofs}
+This class in particular will not test too many hard proofs in Set Theory. In fact, most proofs in this chapter will require you to construct simple direct proofs. So, let us show you an example of how proofs in set theory might look like: \\
+\begin{center}
+    If A and B are two sets, show that $\overline{A \cap B} = \overline{A} \cup \overline{B}$.
+\end{center}
+\begin{proof}
+    We need to show that $\overline{A \cap B} \subset \overline{A} \cup \overline{B}$ and $\overline{A} \cup \overline{B} \subset \overline{A \cap B}$ \\
+    Let x be an arbitrary element $\in \overline{A \cap B}$
+    \begin{center}
+        Then, $x \not\in A \cap B$ \\
+        Then, $\neg(x \in A \wedge x \in B)$ \\
+        Then, $x \not\in A \vee x \not\in B$ \\
+        Then, $x \in \overline{A} \cup \overline{B}$ \\
+        Then, $\overline{A \cap B} \subset \overline{A} \cup \overline{B}$
+    \end{center}
+    Let $x \in \overline{A} \cup \overline{B}$
+    \begin{center}
+        Then, $x \in \overline{A} \vee x \in \overline{B}$ \\
+        Then, $\neg x \in A \vee \neg x \in B$ \\
+        Then, $\neg (x \in A \wedge x \in B)$ \\
+        Then, $\neg (x \in A \cap B)$ \\
+        Then, $x \in \overline{A \cap B}$ \\
+        Thus, $\overline{A} \cup \overline{B} \subset \overline{A \cap B}$
+    \end{center}
+    Thus, $\overline{A \cap B} = \overline{A} \cup \overline{B}$.
+\end{proof}
+You also need to know set identities but they are the same as the basic identities of propositional logic, so I haven't included them in this section. \\
+
+I have also skipped the section of Generalized Unions and Intersections as they are based on the basic definition of union and intersection of sets. Otherwise, that is pretty much it with regards to set theory!
+
+\chapter{Functions}
+\section{Basics}
+A function \emph{f}, from A to B is an assignment of exactly one element of B to each element in A. \\
+For example: Let \emph{f} be a function such that $\forall x \in \mathbb{R}$, $f(x) = x^{2}$. You can observe that for any desired value of x, there is only one unique mapping to $f(x)$. The reverse is not always true! \\ \\
+A function is considered \textbf{\underline{one-to-one or injective}} if $f(x) = f(y) \Leftrightarrow x = y$ \\ \\
+A function from A to B is \textbf{\underline{onto or surjective}} if $\forall y \in B$ $\exists x \in A$ such that $f(x) = y$. \\ \\
+A function that is both one-to-one and onto is called a \textbf{\underline{bijection}}. A function that is bijective implies that an inverse for the function exists! \\ \\
+\textsc{\underline{For Example:}} Consider the function $f:\mathbb{R} \rightarrow \mathbb{R}$ such that $f(x) = 12x + 5$. Show that \emph{f} has an inverse and find its inverse. \\
+\indent \textbf{Solution:} First we have to show that f is injective. \\
+\indent \indent Let us assume that $f(x_{1}) = f(x_{2})$.\\ \indent \indent Then, $12x_{1} + 5 = 12x_{2} + 5 \Leftrightarrow 12x_{1} = 12{x2} \Leftrightarrow x_{1} = x_{2}$. Thus, f is injective! \\
+\indent Next, we have to show that f is surjective. \\
+\indent \indent Let $f(x) = y$. Then, $y = 12x + 5$. \\
+\indent \indent Then, $x = \frac{y - 5}{12}$. One can observe that for any real number y, there exists a real number x such that $x = \frac{y - 5}{12}$. Thus, f is surjective! \\
+\indent Since f is a bijection, the inverse of f $f^{-1}(x) = \frac{x - 5}{12}$
+
+\section{Floor and Ceiling Functions}
+The \textbf{floor} of any real number returns the greatest integer that is less than or equal to the real number. \\
+The \textbf{ceiling} of any real number returns the smallest integer that is greater than or equal to the real number. \\
+
+For example: $\lfloor 2.5 \rfloor = 2$, $\lfloor -3.4 \rfloor = -4, \lfloor 7 \rfloor = 7$ \\
+\indent \indent $\lceil 2.5 \rceil = 3, \lceil -3.4 \rceil = -3, \lceil \pi \rceil = 4$.
+\subsection{Proofs regarding Floor and ceiling functions}
+I think it would be quite redundant to show proofs regarding floor and ceiling functions. Questions that are similar to the ones shown in the \href{http://nook.cs.ucdavis.edu/~koehl/Teaching/ECS20/Lectures/Lecture5_notes.pdf}{\underline{\emph{lecture notes}}} generally show up on the midterms/final. Thus, I have omitted this one topic as you can just read it up from the notes.
+\section{Growth of Functions}
+Often times, your task would be to determine the running time of an algorithm that you just developed. These running times are represented as $O()$ (Big Oh), $\Omega()$ (Big Omega), and $\Theta()$ (Big Theta) respectively.
+\subsection{Big-O Notation}
+The Big-O Notation is often used to represent the worst case analysis. Think of Big-O as an upper bound for functions. The function f(x) is O(g(x)) if $[f(x) \leq c \times g(x)]$ for all x > k, where c is a positive constant.\\
+Let us consider an example: \\
+Show that $x^{2} + 5x + 3$ is $O(x^{2})$ \\
+\indent \emph{Solution:} In order for $x^{2} + 5x + 3$ to be $O(x^{2})$, $x^{2} + 5x + 3 \leq cx^{2}$. \\
+\indent \indent We know that if $x > 1$ then, $5x \leq 5x^{2}$ and $3 \leq 3x^{2}$. \\
+\indent \indent Adding these up we get: $x^{2} + 5x + 3 \leq x^{2} + 5x^{2} + 3x^{2} \leq 9x^{2}$. \\
+\indent \indent Thus by selectively choosing $k = 1$ and $c = 9$, we can show that $x^{2} + 5x + 3$ is $O(x^{2})$. \\ \\
+\noindent For further verification and understanding, let us graph the functions $x^{2} + 5x + 3$ and $9x^{2}$.
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=0:50,
+    samples=100,
+    color=red,
+]
+{x^2 + 5*x + 3};
+\addlegendentry{$x^2 + 5x + 3$}
+%Here the blue parabola is defined
+\addplot [
+    domain=0:50,
+    samples=100,
+    color=blue,
+    ]
+    {9*x^2};
+\addlegendentry{$9x^{2}$}
+
+\end{axis}
+\end{tikzpicture} \\
+As you can see, $x^2 + 5x + 3$ is never greater than $9x^{2}$.
+
+\subsection{Big-Omega Notation}
+The Big-Omega Notation is often used to represent the best case analysis. Think of Big-Omega as an lower bound for functions. The function f(x) is $\Omega(g(x))$ if $[f(x) \geq c \times g(x)]$ for all x > k, where c is a positive constant.\\
+Let us consider an example: \\
+Show that $x^{3} + 6x^{2} + 3$ is $\Omega(x^{3})$ \\
+\indent \emph{Solution:} In order for $x^{3} + 6x^{2} + 3$ to be $\Omega(x^{3})$, $x^{3} + 6x^{2} + 3 \geq cx^{3}$. \\
+\indent \indent We know that if $x > 1$ then, $x^{3} + 6x^{2} + 3 \geq x^{3}$. \\
+\indent \indent Thus by selectively choosing $k = 1$ and $c = 1$, we can show that $x^{3} + 6x^{2} + 3$ is $\Omega(x^{3})$. \\ \\
+\noindent For further verification and understanding, let us graph the functions $x^{3} + 6x^{2} + 3$ and $x^{3}$.
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=0:50,
+    samples=100,
+    color=red,
+]
+{x^3 + 6*x^2 + 3};
+\addlegendentry{$x^{3} + 6x^{2} + 3$}
+%Here the blue parabola is defined
+\addplot [
+    domain=0:50,
+    samples=100,
+    color=blue,
+    ]
+    {x^3};
+\addlegendentry{$x^{3}$}
+
+\end{axis}
+\end{tikzpicture} \\
+As you can see, $x^{3} + 6x^{2} + 3$ is always greater than $x^{3}$.
+\subsection{Big-Theta Notation}
+The Big-Theta Notation is often used to represent the average case analysis. Think of Big-Theta as a tight bound for functions. The function f(x) is $\Theta(g(x))$ if f(x) is $O(g(x))$ and if f(x) is $\Omega(g(x))$ \\
+Let us consider an example: \\
+Show that $x^{2} + 4x + 7$ is $\Theta(x^{2})$ \\
+\indent \emph{Solution:} First, we have to show that $x^{2} + 4x + 7$ is $O(x^{2})$. \\
+\indent \indent Then, $x^{2} + 4x + 7 \leq cx^{2}$. \\
+\indent \indent We know that for all $x > 1$, $4x \leq 4x^{2}$ and $7 \leq 7x^{2}$. Adding these up, we can say that $x^{2} + 4x + 7 \leq 12x^{2}$. Thus by selectively choosing $k = 1$ and $c = 12$ we can conclude that $x^{2} + 4x + 7$ is $O(x^{2})$.\\
+\noindent Next, we have to show the Big-Omega relation between these two functions. \\
+\indent \indent We know that for all $x > 1$ $x^{2} + 4x + 7 \geq x^{2}$
+\indent \indent Thus by selectively choosing $k = 1$ and $c = 1$ we can conclude that $x > 1$ $x^{2} + 4x + 7$ is $\Omega(x^{2})$. \\
+\indent \indent Thus $\forall x > 1$ we can infer that:
+\begin{center}
+    $x^{2} \leq x^{2} + 4x + 7 \leq 12x^{2}$
+\end{center}
+\indent \indent Thus, $x^{2} + 4x + 7$ is $\Theta(x^{2})$
+\subsection{Why do we need all this?}
+Often times in algorithm analysis, you deal with large chunks of data. If, for example, $n = 10$ where n is the number of elements, then it doesn't really matter how good or bad our Big-Oh is. What if $n = 1,000,000$? Then $n^{2}$ and $n^{3}$ would be significantly different. This is why we study the growth of these functions. These notations are also sometimes referred to as time complexities. You will learn about time complexities extensively in ECS 60 and ECS 122A.
+
+\chapter{Number Theory}
+\end{document}
