@@ -1,0 +1,131 @@
+\chapter{Math Symbols, Notations, and Identities}
+
+\section{Symbols and Notations}
+Here are the symbols and notations that you must absolutely know!
+
+\subsection{Sets of Numbers}
+\indent \indent $\mathbb{N}$ = Set of all Natural Numbers. \\
+\indent $\mathbb{Z}$ = Set of all Integers. \\
+\indent $\mathbb{Q}$ = Set of all Rational Numbers. \\
+\indent $\mathbb{R}$ = Set of all Real Numbers. \\
+\indent $\mathbb{C}$ = Set of all Complex Numbers.
+
+\subsection{Propositional Logic}
+\indent \indent $\neg P$ = Negation of the proposition, \emph{P}. \\
+\indent $P \wedge Q$ = Conjunction of the propositions \emph{P and Q}. \\
+\indent $P \vee Q$ = Disjunction of the propositions \emph{P and Q}. \\
+\indent $P \oplus Q$ = P XOR Q (Exclusive Or). \\
+\indent $P \rightarrow Q$ = "If P, then Q" (Conditional). \\
+\indent $P \leftrightarrow Q$ = "P if and only if Q" (Biconditional). \\
+\indent $P \Leftrightarrow Q$ = P is equivalent to Q. \\ \\ \\ \\
+
+\pagebreak[4]
+
+\subsection{Set Theory}
+\indent \indent $\emptyset$ = Empty Set. \\
+\indent $ x \in \mathbb{Q}$ = x belongs to a rational number. \\
+\indent $A \subset B$ = Set A is a subset of set B. \\
+\indent $S = \{1,2,3,4\}$ =  An example of a set in roster form. \\
+\indent $S = \{x \mid 1 \leq x \leq 4, x \in \mathbb{Z}\}$ = An example of a
+set in set-builder form. \\
+\indent $A \cup B$ = A union B.\\
+\indent$A \cap B$ = A intersection B.\\
+\indent$A - B$ = A minus B (Set difference). \\
+\indent$\overline{A}$ = Complement of A. \\
+\indent$\mid A \mid$ = Number of elements in A (Cardinality).
+
+
+\subsection{Functions}
+\indent \indent $\lceil x \rceil $ = Ceiling of x. \\
+\indent $\lfloor x \rfloor$ = Floor of x.\\
+\indent $O(f(x))$ = Big-O of the function \emph{f}.\\
+\indent $\Omega(f(x))$ = Big-Omega of the function \emph{f}.\\
+\indent $\Theta(f(x))$ = Big-Theta of the function \emph{f}.
+
+\subsection{Number Theory}
+\indent \indent $ a / b $ = a divides b. \\
+\indent $a \equiv b [m]$ = a is congruent to b modulo m.
+
+\subsection{Miscellaneous}
+\indent \indent $\sum_{i = 1} ^ {n} i$ = Sum of first n terms. \\
+\indent $\prod_{i = 1} ^ {n} i$ = Product of first n terms.\\
+\indent $n!$ = \emph{n} factorial. \\
+\indent $\forall x \in \mathbb{Z}, P(x)$ = For all x in the set of integers,
+P(x) is true. \\
+\indent $ \exists x \in \mathbb{Z}, P(x)$ = There exists an x such that P(x) is
+true.
+
+\pagebreak[4]
+
+\section{Important Identities}
+\indent \indent I have compiled a bunch of identities that are going to prove
+to be very useful for proofs or problem solving. Again, I have broken them down
+into chapters for better reference \footnote{I haven't included basic
+conjunctions and disjunctions of propositions because you should be knowing
+them by now!}.
+\subsection{Simple Mathematical Identities}
+\indent \indent $(a + b)^{2} = a^{2} + 2ab + b^{2}$ \\
+\indent $(a - b)^{2} = a^{2} - 2ab + b^{2}$ \\
+\indent $a^{2} - b^{2} = (a + b)\times(a - b)$ \\
+\indent $a^{m} \times a^{n} = a^{m + n}$ \\
+\indent $(a^{m})^{n} = a^{mn}$ \\
+\indent $log(a \times b) = log(a) + log(b)$ \\
+\indent $log(a^{b}) = b \times log(a)$
+
+\subsection{Propositional Logic}
+\indent \indent $\neg (\neg P) = P$ \\
+\indent $P \oplus Q = (P \vee Q) \wedge (\neg(P \wedge Q))$ \\
+\indent $\neg(P \wedge Q) = \neg P \vee \neg Q$\\
+\indent $\neg(P \vee Q) = \neg P \wedge \neg Q$ \\
+\indent $P \vee P = P$\\
+\indent $P \wedge P = P$\\
+\indent $P \wedge Q = Q \wedge P$ \\
+\indent $P \vee Q = Q \vee P$ \\
+\indent $(P \wedge Q) \wedge R = P \wedge (Q \wedge R)$ \\
+\indent $(P \vee Q) \vee R = P \vee (Q \vee R)$ \\
+\indent $P \wedge (Q \vee R) = (P \vee Q) \wedge (P \vee R)$ \\
+\indent $P \vee (Q \wedge R) = (P \wedge R) \vee (P \wedge R)$ \\
+\indent $ P \leftrightarrow Q \Leftrightarrow (P \rightarrow Q) \wedge (Q
+\rightarrow P)$ \\
+\indent $P \rightarrow Q = \neg P \vee Q$ \\
+
+\subsection{Functions}
+\indent \indent $ x - 1 < \lfloor x \rfloor \leq x \leq \lceil x \rceil < x +
+1$ \\
+\indent $ \lfloor - x \rfloor = - \lceil x \rceil$ \\
+\indent $ \lceil -x \rceil = - \lfloor x \rfloor$ \\
+\indent $ \lfloor x + n \rfloor = \lfloor x \rfloor + n$, for some \emph{n}
+$\in \mathbb{Z}$ \\
+\indent $ \lceil x + n \rceil = \lceil x \rceil + n$, for some \emph{n} $\in
+\mathbb{Z}$ \\
+\indent $(\exists n \in \mathbb{Z})(\exists \epsilon \in \mathbb{R}) \lfloor x
+\rfloor = n + \epsilon$, where $ 0 \leq \epsilon \leq 1$ \\
+\indent $f(x) = O(g(x)) \rightarrow (\exists k \in \mathbb{Z})(\exists c \in
+\mathbb{R^{+}})(\forall x > k)[f(x) \leq c \times g(x)]$\\
+\indent $f(x) = \Omega(g(x)) \rightarrow (\exists k \in \mathbb{Z})(\exists c
+\in \mathbb{R^{+}})(\forall x > k)[f(x) \geq c \times g(x)]$\\
+\indent $f(x) = \Theta(g(x)) \rightarrow [f(x) = O(g(x))] \wedge [f(x) =
+\Omega(g(x))]$
+
+\subsection{Number Theory}
+\indent \indent $ a / b \rightarrow (\exists c \in \mathbb{Z})[a = b \times
+c]$\\
+\indent $ a / b \wedge a / c \rightarrow a / (b + c)$\\
+\indent $ a/ b \wedge b / c \rightarrow a / c $\\
+\indent $ gcd(a, b) = am + bn$, for some $m, n \in \mathbb{Z}$
+(\textbf{Bezout's Identity})\\
+\indent $ gcd(a, b) \times lcm(a, b) = a \times b$\\
+\indent $ a \equiv b[m] \wedge c \equiv d[m] \rightarrow (a + b) \equiv (c +
+d)[m]$\\
+\indent $ a \equiv b[m] \wedge c \equiv d[m] \rightarrow (ab) \equiv (cd)[m]$\\
+\indent If \emph{p} is a prime number, then $a^{p} \equiv a[p]$
+(\textbf{Fermat's Little Theorem})\\
+\indent If \emph{p} is a prime number and $p / ab$, then $p / a \vee p / b$
+(\textbf{Euclid's Identity})\\
+
+\subsection{Counting}
+\indent \indent $\mid A \cup B \mid$ =  $\mid A \mid + \mid B \mid - \mid A
+\cap B \mid$ \\
+\indent $P(n,r)$ = $ \frac{n!}{(n - r)!}$ (\textbf{Permutations}) \\
+\indent $C(n,r)$ or $\binom{n}{r}$ = $\frac{n!}{r!(n - r)!}$
+(\textbf{Combinations})
