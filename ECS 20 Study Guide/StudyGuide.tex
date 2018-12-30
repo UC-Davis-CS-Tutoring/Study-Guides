@@ -2,14 +2,45 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{booktabs}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{pgfplots}
+\usepackage{enumitem}
+\usepackage{mathtools}
 \pgfplotsset{width=10cm,compat=1.9}
 \usepackage[english]{babel}
+
+% The minipage prevents LaTeX from putting linebreaks in lists
+\newenvironment{symbollist} {\begin{minipage}{\linewidth}
+    \begin{description}[labelindent=1em,itemsep=0em,parsep=0em]}
+    {\end{description}\end{minipage}}
+
+\newenvironment{caselist}[1][Case \arabic*:]{\begin{minipage}{\linewidth}
+    \begin{enumerate}[label=\textbf{\emph{#1}},itemsep=0em,parsep=0.5em,leftmargin=*]}
+    {\end{enumerate}\end{minipage}}
+
+\newenvironment{trylist}{\begin{caselist}[Try:]}{\end{caselist}}
+
+\newtheorem*{theorem}{Theorem}
+% https://tex.stackexchange.com/questions/37472/spacing-before-and-after-with-newtheoremstyle
+\newtheoremstyle{nospace}
+  {0} % Space above
+  {0} % Space below
+  {} % Body font
+  {} % Indent amount
+  {\bfseries} % Theorem head font
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {} % Theorem head spec (can be left empty, meaning `normal')
+\theoremstyle{nospace} \newtheorem*{definition}{Definition}
+\theoremstyle{definition} \newtheorem*{question}{Question}
+\newtheorem*{solution}{Solution}
+\newtheorem*{remark}{Remark}
+\newtheorem*{example}{Example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % First page of book which contains 'stuff' like: %
@@ -40,26 +71,32 @@
 % Preface %
 %%%%%%%%%%%
 \chapter*{How to Use This Study Guide}
+\setlength{\parskip}{1em}
 This study guide is meant to help you review topics before the midterms and the
 final. Please do not use this study guide as your main source of preparation
-for exams. \\
-\par This study guide goes over each and every topic in ECS 20. I have
-previously taken ECS 20 with Professor Koehl, so I have a pretty good idea
-about exams and the material covered. Hence this study guide is tailor made for
-students in Professor Patrice Koehl's ECS 20. If you are not in Professor
-Koehl's ECS 20 and still wish to use this study guide, please go ahead and do
-so. Please be forewarned that some topics might not covered in this study guide
-that other professors might cover (for example: Graph Theory is not covered in
-this study guide). \\
-\par Each chapter in the study guide reviews important concepts and theorems.
+for exams.
+
+This study guide goes over each and every topic in ECS 20. I have previously
+taken ECS 20 with Professor Koehl, so I have a pretty good idea about exams and
+the material covered. Hence this study guide is tailor made for students in
+Professor Patrice Koehl's ECS 20. If you are not in Professor Koehl's ECS 20
+and still wish to use this study guide, please go ahead and do so. Please be
+forewarned that some topics might not covered in this study guide that other
+professors might cover (for example: Graph Theory is not covered in this study
+guide).
+
+Each chapter in the study guide reviews important concepts and theorems.
 Furthermore, I have gone ahead and solved some questions that have been asked
 on previous midterms. Additionally, I have added a few questions for you to try
-out on your own (\textbf{No solutions have been provided}). \\
-\par I sincerely hope that this study guide helps you better prepare for the
-midterms and the final! Good luck on this challenging course. \\
+out on your own (\textbf{No solutions have been provided}).
+
+I sincerely hope that this study guide helps you better prepare for the
+midterms and the final! Good luck on this challenging course.
 
 \noindent \textbf{Aakash Prabhu (Class of 2019)} \\
 \noindent \textbf{President, \emph{Computer Science Tutoring Club}}
+
+\setlength{\parskip}{0em}
 
 \input{Symbols}
 \input{Logic}
